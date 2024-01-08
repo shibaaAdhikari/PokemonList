@@ -1,0 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,400;0,500;1,100;1,400&display=swap');
+
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/components';
+
+body{
+    font-family: 'Barlow', sans-serif;
+}
