@@ -29,19 +29,24 @@ There's nothing special about `src/components/`, but that's where we like to put
 
 Any static assets, like images, can be placed in the `public/` directory.
 
-## 🧞 Commands
 
-All commands are run from the root of the project, from a terminal:
+# Pokemon List Component
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+A React component for displaying a list of Pokemon cards.
 
-## 👀 Want to learn more?
+## Installation
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+To use this component in your React project, follow these steps:
+
+1. Clone the repository:
+
+```bash
+git clone git@github.com:shibaaAdhikari/PokemonList.git
+
+2. Install the required npm packages:
+   npm install
+
+3.Execute the project:
+   npm start
+
+```
