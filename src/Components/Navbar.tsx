@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import pokemonlogo from "../Asset/logo.png";
 
 interface NavbarProps {
   src: string;
+  onSearch: (searchTerm: string) => void;
 }
 
 const Navbar: React.FC<NavbarProps> = ({ src }) => {
@@ -17,12 +18,6 @@ const Navbar: React.FC<NavbarProps> = ({ src }) => {
           placeholder="Search for Pokemon"
           className="p-2 pl-10 rounded-tl-md rounded-bl-md"
         />
-        <button
-          type="button"
-          className="p-2 bg-yellow-400 text-white rounded-r-md cursor-pointer"
-        >
-          search
-        </button>
       </div>
     </div>
   );

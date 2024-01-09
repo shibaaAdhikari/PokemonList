@@ -7,6 +7,14 @@ const res = await fetch(`https://pokeapi.co/api/v2/pokemon`);
 const data = await res.json();
 
 console.log(data.results);
+
+const IMAGE_URL = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/`;
+
+const getPokemonImage = function (pokemon) {
+  const urlSplitted = pokemon.url.split("/");
+  const pokemonId = urlSplitted[urlSplitted.length - 2];
+  return `${IMAGE_URL}${pokemonId}.png`;
+};
 ---
 
 <html lang="en">
@@ -19,7 +27,7 @@ console.log(data.results);
   </head>
   <body>
     <Navbar />
-    <Cards pokemonList={data.results} />
+    <Cards pokemonList={data.results} getPokemonImage={getPokemonImage} />
     <!-- <Mainlayout /> -->
   </body>
 </html>
