@@ -2,15 +2,12 @@
 import "../style.css";
 import Navbar from "../Components/Navbar";
 import Cards from "../Components/Cards";
+import type { ChangeEventHandler } from "react";
 
-const res = await fetch(`https://pokeapi.co/api/v2/pokemon`);
-const data = await res.json();
-const IMAGE_URL = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/`;
-
-const getPokemonImage = function (pokemon) {
-  const urlSplitted = pokemon.url.split("/");
-  const pokemonId = urlSplitted[urlSplitted.length - 2];
-  return `${IMAGE_URL}${pokemonId}.png`;
+export type TPokemon = {
+  name: string;
+  url: string;
+  image: string;
 };
 ---
 
@@ -23,7 +20,7 @@ const getPokemonImage = function (pokemon) {
     <title>Astro</title>
   </head>
   <body>
-    <Navbar />
-    <Cards pokemonList={data.results} getPokemonImage={getPokemonImage} />
+    <Navbar src="" client:load />
+    <Cards client:only />
   </body>
 </html>
