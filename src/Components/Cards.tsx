@@ -1,7 +1,5 @@
 // Cards.tsx
 import React, { useEffect, useState } from "react";
-import { fetchData } from "../API/apiUtils";
-import type { PokemonDetails } from "../API/apiUtils";
 import "../style.css";
 
 interface CardsProps {
@@ -10,27 +8,10 @@ interface CardsProps {
 }
 
 const Cards: React.FC<CardsProps> = ({ pokemonList, getPokemonImage }) => {
-  const [pokemonData, setPokemonData] = useState<PokemonDetails[]>([]);
-
-  useEffect(() => {
-    const fetchDataAndSetState = async () => {
-      try {
-        const data = await fetchData();
-        setPokemonData(data);
-      } catch (error) {
-        // Handle error
-        console.error("Error fetching Pokemon data:", error);
-      }
-    };
-
-    fetchDataAndSetState();
-  }, []);
-
   return (
-    <div className="cards-container flex flex-wrap">
+    <div className="cards-container flex flex-wrap justify-center items-center">
       {pokemonList.map((pokemon) => {
         const imageUrl = getPokemonImage(pokemon);
-        const pokemonDetails = pokemonData.find((p) => p.name === pokemon.name);
 
         return (
           <div
@@ -40,7 +21,7 @@ const Cards: React.FC<CardsProps> = ({ pokemonList, getPokemonImage }) => {
             <img
               src={imageUrl}
               alt={`${pokemon.name} sprite`}
-              className="w-64 sm:w-40 md:w-72 lg:w-80 xl:w-72 h-40 m-4 rounded-md"
+              className="w-40"
             />
             <h3 className="text-center text-lg font-bold">{pokemon.name}</h3>
           </div>

@@ -5,9 +5,6 @@ import Cards from "../Components/Cards";
 
 const res = await fetch(`https://pokeapi.co/api/v2/pokemon`);
 const data = await res.json();
-
-console.log(data.results);
-
 const IMAGE_URL = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/`;
 
 const getPokemonImage = function (pokemon) {
@@ -28,6 +25,5 @@ const getPokemonImage = function (pokemon) {
   <body>
     <Navbar />
     <Cards pokemonList={data.results} getPokemonImage={getPokemonImage} />
-    <!-- <Mainlayout /> -->
   </body>
 </html>
